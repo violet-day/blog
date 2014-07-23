@@ -3,12 +3,14 @@ date: 2014-07-24 05:56:42
 tags:
 -   linux
 -   node
+
 categories:
--   linux
+-   Linux
 
 ---
-设置时间同步
-============
+
+#	设置时间同步
+
 ```bash
 yum -y install  vixie-cron crontabs
 vi /etc/crontab
@@ -17,8 +19,8 @@ time.scau.edu.cn
 time.windows.com 
 asia.pool.ntp.org
 ```
-修改防火墙
-==========
+
+#	修改防火墙
 ```bash
 iptables -L -n
 
@@ -31,8 +33,8 @@ service iptables restart
 
 -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 3000:5000 -j ACCEPT
 ```
-安装mongo
-========
+
+#	安装mongo
 ```bash
 wget http://downloads.mongodb.org/linux/mongodb-linux-x86_64-2.2.7.tgz
 tar zxf mongodb-linux-x86_64-2.2.7.tgz
@@ -42,8 +44,8 @@ touch /usr/local/mongodb/logs
 echo "/usr/local/mongodb/bin/mongod --dbpath=/usr/local/mongodb/data --logpath=/usr/local/mongodb/logs --logappend  --auth --port=27017" >> /etc/rc.local
 ln -s /usr/local/mongodb/bin/* /usr/sbin/
 ```
-SVN
-=====
+
+#	SVN
 ```bash
 yum install -y subversion
 svn help
@@ -62,8 +64,8 @@ npm config set registry http://registry.cnpmjs.org
 #链接至环境变量，每次安装nmp -g安装的模块都需要执行一次
 ln -s /usr/local/node/bin/* /usr/sbin/
 ```
-Nginx
-=============
+
+#	Nginx
 ```bash
 wget http://nginx.org/download/nginx-1.2.6.tar.gz
 yum install gcc-c++
@@ -161,8 +163,7 @@ chkconfig nginx on            #设置开机启动
 /etc/rc.d/init.d/nginx restart             #重启
 ```
 
-Forever
-===============
+#	Forever
 ```bash
 forever start -w --watchDirectory /pro/projects/oes/libs/ /pro/projects/oes/libs/app.js
 ```    
