@@ -1,8 +1,7 @@
-layout: nginx
-title: Large
+title: Large Request-URI Too Large
 date: 2014-07-24 05:59:54
 tags:
--   nginx
+-   Nginx
 -   Request-URI Too Large
 
 categories:
