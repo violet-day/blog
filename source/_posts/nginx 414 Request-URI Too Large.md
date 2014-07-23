@@ -6,7 +6,7 @@ tags:
 -   Request-URI Too Large
 
 categories:
--   nginx
+-   Nginx
 
 ---
 
