@@ -1,6 +1,11 @@
 title: Linux下Node生产环境部署
 date: 2014-07-24 05:56:42
 tags:
+-   linux
+-   node
+categories:
+-   linux
+
 ---
 设置时间同步
 ============

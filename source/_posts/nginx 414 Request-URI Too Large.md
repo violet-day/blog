@@ -2,7 +2,15 @@ layout: nginx
 title: Large
 date: 2014-07-24 05:59:54
 tags:
+-   nginx
+-   Request-URI Too Large
+
+categories:
+-   nginx
+
 ---
+
+
 客户端请求头缓冲区大小，如果请求头总长度大于小于128k，则使用此缓冲区，
 请求头总长度大于128k时使用large_client_header_buffers设置的缓存区
 `client_header_buffer_size 128k;`
@@ -12,10 +20,10 @@ large_client_header_buffers 指令参数4为个数，128k为大小，默认是8k
 
 当http 的URI太长或者request header过大时会报414 Request URI too large或400 bad request错误。
 
-可能原因
+可能原因:
 
-1.  cookie中写入的值太大造成的，因为header中的其他参数的size一般比较固定，只有cookie可能被写入较大的数据
-2.  请求参数太长，比如发布一个文章正文，用urlencode后，使用get方式传到后台。
+1.	cookie中写入的值太大造成的，因为header中的其他参数的size一般比较固定，只有cookie可能被写入较大的数据
+1.	请求参数太长，比如发布一个文章正文，用urlencode后，使用get方式传到后台。
 
 ```
 GET http://www.264.cn/ HTTP/1.1

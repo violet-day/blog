@@ -1,6 +1,10 @@
 title: Upstream负载均衡模块
 date: 2014-07-24 06:00:38
 tags:
+-   nginx
+-   负载均衡
+category:
+-   nginx
 ---
 Nginx 的 HttpUpstreamModule 提供对后端（backend）服务器的简单负载均衡。一个最简单的 upstream 写法如下：
 ```
