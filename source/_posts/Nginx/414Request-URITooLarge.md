@@ -1,11 +1,10 @@
-title: Large Request-URI Too Large
+title: Large Request-URI-Too-Large
 date: 2014-07-24 05:59:54
 tags:
--   Nginx
--   Request-URI Too Large
+-   nginx
 
 categories:
--   Nginx
+-   nginx
 
 ---
 
@@ -52,4 +51,3 @@ If-Modified-Since: Mon, 13 May 2013 13:40:02 GMT
 
 client_header_buffer_size 512k;
 large_client_header_buffers 4 512k;
-

@@ -1,11 +1,11 @@
 title: Upstream负载均衡模块
 date: 2014-07-24 06:00:38
 tags:
--   Nginx
+-   nginx
 -   负载均衡
 
 category:
--   Nginx
+-   nginx
 
 ---
 
