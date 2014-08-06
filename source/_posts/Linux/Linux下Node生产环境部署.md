@@ -100,19 +100,16 @@ ln -s /usr/local/nginx/sbin/nginx /usr/sbin/
 ```bash
 #删除nginx的原来config
 rm -f /usr/local/nginx/conf/nginx.conf
-
 #重新写入conf
 vi /usr/local/nginx/conf/nginx.conf
-
 #见nginx.conf
-
 #添加vhost文件夹
 mkdir /usr/local/nginx/conf/vhost
-
 #添加配置
 vi /usr/local/nginx/conf/vhost/#站点名称.conf
 ```
 
+## 站点名称.conf
 ```conf
   	server {
         listen       80;
@@ -136,6 +133,7 @@ vi /usr/local/nginx/conf/vhost/#站点名称.conf
 	}
     }
 ```
+
 ## 守护进程
 ```bash
 vi /etc/rc.d/init.d/nginx
