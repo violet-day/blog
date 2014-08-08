@@ -111,27 +111,30 @@ vi /usr/local/nginx/conf/vhost/#站点名称.conf
 
 ## 站点名称.conf
 ```conf
-  	server {
-        listen       80;
-        server_name  #站点名称;
+server {
+	listen       80;
+	server_name  #站点名称;
 
-        #charset koi8-r;
+    #charset koi8-r;
 
-        #access_log  logs/host.access.log  main;
+    #access_log  logs/host.access.log  main;
 
-        location /api/ { 
+    location /api/ { 
 		proxy_pass  http://127.0.0.1:8080; # node.js app
 		proxy_redirect     off;
 		proxy_set_header   Host             $host;
 		proxy_set_header   X-Real-IP        $remote_addr;
-		proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+		proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
 	}
-	location ~* \.(html|jpg|jpeg|gif|png|css|js|json|woff|zip|tgz|gz|swf|ico|txt|xml)$ {
+	location ^~ /files/ {    
+		alias  #路径/files/;
+	}
+	location ~* \.(html|jpg|jpeg|gif|png|css|js|json|woff|zip|tgz|gz|swf|ico|txt|xml)${
 		expires max;
 		index index.html; 
 		root #路径;
 	}
-    }
+}
 ```
 
 ## 守护进程
@@ -140,6 +143,10 @@ vi /etc/rc.d/init.d/nginx
 # 复制守护进程
 ```
 
+# 	安装git
+```bash
+yum install git
+```
 #	Forever
 ```bash
 forever start -w --watchDirectory /pro/projects/oes/libs/ /pro/projects/oes/libs/app.js
