@@ -1,9 +1,9 @@
 title: Can't install Cordova plugins from Git on CLI
 tags:
-  - Cordova
+  - cordova
 
 categories:
-  - Cordova
+  - cordova
 
 date: 2014-08-09 06:53:03
 
