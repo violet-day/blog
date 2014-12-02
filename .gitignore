@@ -6,3 +6,7 @@ node_modules/
 public/
 .deploy/
 ..idea/
+.idea/.name
+.idea/encodings.xml
+*.iml
+*.xml
