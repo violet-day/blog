@@ -15,6 +15,7 @@ Redis中文：http://www.redis.cn/
 
 官方下载：http://redis.io/download 可以根据需要下载不同版本
 
+部署服务器
 ```bash
 git clone https://github.com/MSOpenTech/redis
 cd redis/bin/relase
@@ -22,8 +23,10 @@ cd redis/bin/relase
 redis-server.exe redis.windows.conf
 ```
 
+启动客户端
+
 ```bash
-~redis-cli.exe -h 127.0.0.1 -p 6379
+redis-cli.exe -h 127.0.0.1 -p 6379
 ```
 
 

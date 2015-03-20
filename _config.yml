@@ -2,7 +2,7 @@
 ## Docs: http://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site 这里的配置，哪项配置反映在哪里，可以参考我的博客
+# Site
 title:  Nemo's Blog
 subtitle: Ride The Lightning
 description:
@@ -80,7 +80,7 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: landscape-plus
+theme: yilia
 exclude_generator:
 
 # Deployment
