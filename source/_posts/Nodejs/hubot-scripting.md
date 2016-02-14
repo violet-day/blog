@@ -55,7 +55,6 @@ module.exports = (robot) ->
 
 * HAL: please open the pod bay doors
 	* 因为`respond`需要文本信息之前跟着机器人名称
-
 * has anyone ever mentioned how lovely you are when you open the pod bay doors?
 	* 缺少机器人名称
 
@@ -232,7 +231,7 @@ module.exports = (robot) ->
 
 Hubot有一个基于内存的key-value存储，通过`robot.brain`来存储、设置数据。
 
-```
+```js
 robot.respond /have a soda/i, (res) ->
   # Get number of sodas had (coerced to a number).
   sodasHad = robot.brain.get('totalSodas') * 1 or 0
@@ -385,8 +384,8 @@ Listener中间件的回调函数接受3个参数:`context`、`next`和`done`。
 
 `context`包含这些字段：
 
-＊ `listener`
-	＊ 	options: 一个Object对象，包含listener中定义的metadata。
+* `listener`
+	* 	options: 一个Object对象，包含listener中定义的metadata。
 * `response`
 	* 所有的response API都包含
 	* 中间件用一些额外的信息来装饰（不是修改）response（比如为`response.message.user`添加LDAP groups信息）
