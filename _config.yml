@@ -87,5 +87,6 @@ exclude_generator:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/violet-day/violet-day.github.io.git
+  repo: git@github.com:violet-day/violet-day.github.io.git
+  #repo: https://github.com/violet-day/violet-day.github.io.git
   branch: master
