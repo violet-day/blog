@@ -152,7 +152,7 @@ xxxOperations:Set<Promise>的作用为暂存执行create、desitory、validation
 1. 在createResource的逻辑中，会讲分配出去的resource添加至resourceLoans中，release的主要作用也是从resourceLoans将resouce移除
 2. 标记resource状态为idel，并归还至availableObjects
 
-## 总结：
+## 总结
 
 1. 整个项目3.x版本重构过了，使用了es6的class来构建模块，可以通过类图理解结构，好评
 2. factory接口中定义的create、destory、validate的均为异步函数，关于在判断数量时均需要考虑正在create、destory和validte的数量。这里是factory中的promise通过set保存
