@@ -90,7 +90,7 @@ tags:
 
 xxxOperations:Set<Promise>的作用为暂存执行create、desitory、validation中的请求
 
-#### getter
+### getter
 
 * potentiallyAllocableResourceCount： 可以被分配的资源的数量，为以下之和
 	* availableObjects
@@ -100,7 +100,7 @@ xxxOperations:Set<Promise>的作用为暂存执行create、desitory、validation
 * count = allObjects + factoryCreateOperations：当前已经创建的资源和即将创建的资源之和
 * spareResourceCapacity = config.max - count：当前还可以创建的数量
 
-#### function
+### function
 
 **dispatchPooledResourceToNextWaitingClient(pooledResource)**
 
@@ -149,7 +149,7 @@ xxxOperations:Set<Promise>的作用为暂存执行create、desitory、validation
 
 **release(resource)**
 
-1. 在createResource的逻辑中，会讲分配出去的resource添加至resourceLoans中，release的主要作用也是从resourceLoans将resouce移除
+1. 在createResource的逻辑中，会将分配出去的resource添加至resourceLoans中，release的主要作用也是从resourceLoans将resouce移除
 2. 标记resource状态为idel，并归还至availableObjects
 
 ## 总结
