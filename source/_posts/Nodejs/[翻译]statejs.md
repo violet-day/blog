@@ -1,4 +1,4 @@
-title: "[翻译]statejs"
+title: statejs
 date: 2014-07-24 05:59:31
 tags:
 ---
@@ -174,3 +174,5 @@ Transitions can therefore be organized in a variety of ways, but ambiguity resol
 ```js
 
 ```
+
+
