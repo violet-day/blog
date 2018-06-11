@@ -38,11 +38,11 @@ $$
 
 ## 相对熵(Relative Entropy) 
 
-相对熵(Eelative Entropy)又称为KL散度（Kullback-Leibler divergence），KL距离，是两个随机分布间距离的度量。记作$D_KL(p||q)$
+相对熵(Eelative Entropy)又称为KL散度（Kullback-Leibler divergence），KL距离，是两个随机分布间距离的度量。记作$D_{KL}(p||q)$
 
 $$
 \begin{aligned}
-D_KL(p||q) &= E_p[log \, \frac {p(x)} {q(x)}] \\
+D_{KL}(p||q) &= E_p[log \, \frac {p(x)} {q(x)}] \\
 &= \sum_{x \in \varkappa} \, p(x) \, log \, \frac {p(x)} {q(x)} \\
 &= \sum_{x \in \varkappa} [p(x)\,log\,p(x) - p(x)\,log\,q(x)] \\
 &= \sum_{x \in \varkappa} p(x)\,log\,p(x) - \sum_{x \in \varkappa} p(x)\,log\,q(x) \\
@@ -66,7 +66,7 @@ $$
 ## 交叉熵(Cross Entropy)
 
 $$
-CEH(p, q) = E_p[-log\,q] = - \sum_{x \in \varkappa} p(x) log\,q(x) = H(p) + D_KL(p||q)
+CEH(p, q) = E_p[-log\,q] = - \sum_{x \in \varkappa} p(x) log\,q(x) = H(p) + D_{KL}(p||q)
 $$
 
 在$p$为真实概率分布的前提下，$H(p)$可以看作常数，此时交叉熵和相对熵在行为上表现一致，都反映分布$p$和$q$之前的相似程度。所以一般在机器学习中，都直接优化交叉熵。
@@ -80,23 +80,23 @@ $$
 定义假设函数（hypothesis function）为
 
 $$
-h_{\vartheta} = \frac {1} {1+ e ^{ -{\vartheta}^T x }}
+h_{\theta} = \frac {1} {1+ e ^{ -{\theta}^T x }}
 $$
 
 
 逻辑回归本质就是2分类问题
 
 $$
-P(\hat{y}| x^{(i)};\vartheta) = \begin{cases}
-	h_{\vartheta}(x^{(i)}) &\text{if } \hat{y} = 1  \\
-   1- h_{\vartheta}(x^{(i)}) &\text{if } \hat{y} = 0
+P(\hat{y}| x^{(i)};\theta) = \begin{cases}
+	h_{\theta}(x^{(i)}) &\text{if } \hat{y} = 1  \\
+   1- h_{\theta}(x^{(i)}) &\text{if } \hat{y} = 0
 \end{cases}
 $$
 
 上述公式可以写为更一般的形式
 
 $$
-P(\hat{y}| x^{(i)};\vartheta) = 	\hat{y} \, h_{\vartheta}(x^{(i)}) + (1- \hat{y}) (1- h_{\vartheta}(x^{(i)}))
+P(\hat{y}| x^{(i)};\theta) = 	\hat{y} \, h_{\theta}(x^{(i)}) + (1- \hat{y}) (1- h_{\theta}(x^{(i)}))
 $$
 
 
@@ -108,7 +108,7 @@ Loss(\hat{y}, y) \\
 &= CEH(p, q) \\
 &= - p(\hat{y})\,log\,q(y) \\
 &= - [P_p(\hat{y}=1)]\,logP_q(\hat{y}=1) + P_p(\hat{y}=0)\,log\,P_q(\hat{y}=0)] \\
-&= -[\hat{y}\,log\,h_{\vartheta}(x)+(1-\hat{y})\,log\,(1-h_{\vartheta}(x))]
+&= -[\hat{y}\,log\,h_{\theta}(x)+(1-\hat{y})\,log\,(1-h_{\theta}(x))]
 \end{aligned}
 $$
 
@@ -116,7 +116,7 @@ $$
 对于m个样本取均值
 
 $$
-\frac {1}{m} \sum_{i=1}^{m}[y^{(i)} h_{\vartheta}(x)^{(i)} + (1-y^{(i)}) (1-h_{\vartheta}(x)^{(i)})]
+\frac {1}{m} \sum_{i=1}^{m}[y^{(i)} h_{\theta}(x)^{(i)} + (1-y^{(i)}) (1-h_{\theta}(x)^{(i)})]
 $$
 
 ## 验证
