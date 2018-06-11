@@ -125,10 +125,13 @@ $$
 import tensorflow as tf
 import numpy as np
 lables = np.array([0,1,1,1,0], dtype=np.float32)
-predictions = np.array([0.5,0.7,0.8,0.9,0.2], dtype=np.float32)
+predictions = np.array([-5,6,5,2,-1], dtype=np.float32)
 
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+    
 def sigmoid_corss_entropy(lables, predictions):
-    logits = 1 / (1 + np.exp(-predictions))
+    logits = sigmoid(predictions)
     ces =  - lables * np.log(logits) - (1 - lables) * np.log(1-logits)
     return ces
 
@@ -138,8 +141,8 @@ with tf.Session() as sess:
     tf_sigmoid_cross_entropy_tensor = tf.losses.sigmoid_cross_entropy(multi_class_labels=tf.constant(lables), logits=tf.constant(predictions))
     tf_sigmoid_cross_entropy = sess.run(tf_sigmoid_cross_entropy_tensor)
 
-print(np_sigmoid_corss_entropy) #0.577531
-print(tf_sigmoid_cross_entropy) #0.577531
+print(np_sigmoid_corss_entropy) # 0.0912192
+print(tf_sigmoid_cross_entropy) # 0.0912192
 ```
 
 
